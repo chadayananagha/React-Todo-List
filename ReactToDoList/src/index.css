@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components{
+    .btn-style
+    {
+        @apply p-2 px-5 m-8 rounded-xl border-t border-white shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500
+    }
+}
