@@ -22,13 +22,17 @@ function App() {
     })
     const createTodos = (todo) =>
     {
-      setTodos([...todos, {task: todo}]);
+      setTodos([...todos, {id:Math.random(),task:todo}]);
+    }
+    const deleteTodos = (id) =>
+    {
+      setTodos(todos.filter(todo => todo.id!== id));
     }
   return (
     <div className="">
       <Header />
       {todos.map((todo,index) => (
-      <ToDoList task={todo} key={index} />
+      <ToDoList task={todo} key={index} deleteTodos={deleteTodos}/>
       ))
       }
       <AddTask getStoredTodos={getStoredTodos} createTodos={createTodos} />
