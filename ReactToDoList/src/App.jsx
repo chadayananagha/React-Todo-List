@@ -34,8 +34,8 @@ function App() {
       {todos.map((todo,index) => (
       <ToDoList task={todo} key={index} deleteTodos={deleteTodos}/>
       ))
-      }
-      <AddTask getStoredTodos={getStoredTodos} createTodos={createTodos} />
+    }
+    <AddTask getStoredTodos={getStoredTodos} createTodos={createTodos} />
       <ClearButton />
     </div>
   )
