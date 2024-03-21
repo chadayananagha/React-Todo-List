@@ -11,7 +11,7 @@
     }
 
     .container-item {
-        @apply flex static bottom-8 justify-between items-center p-4 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out hover:w-5/6 border-slate-100 bg-slate-50/50 backdrop-blur p2
+        @apply flex static bottom-8 justify-between items-center p-4 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out hover:w-5/6 border-slate-100 bg-slate-50/50 backdrop-blur p-4 mb-4
     }
 
     .container-input {
@@ -23,7 +23,7 @@
     }
     
     .body-style {
-        @apply w-full overflow-scroll h-screen bg-[url('https://images.unsplash.com/photo-1580122468928-0e9940385cb1?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center
+        @apply w-full overflow-scroll h-screen flex flex-col justify-center items-center bg-[url('https://images.unsplash.com/photo-1580122468928-0e9940385cb1?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center
     }
 
 }
