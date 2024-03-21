@@ -29,7 +29,7 @@ function App() {
       setTodos(todos.filter(todo => todo.id!== id));
     }
   return (
-    <div className="">
+    <div className="body-style">
       <Header />
       {todos.map((todo,index) => (
       <ToDoList task={todo} key={index} deleteTodos={deleteTodos}/>

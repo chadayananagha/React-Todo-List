@@ -17,7 +17,7 @@ const AddTask = ({createTodos}) => {
   return (
   <>
       <div className="flex flex-col justify-center items-center px-4 w-full h-full">
-          <form className="flex static bottom-8 justify-between items-center p-4 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out hover:w-5/6 border-slate-100 bg-slate-50/50 backdrop-blur p2" onSubmit={handleSubmit}> 
+          <form className="container-input" onSubmit={handleSubmit}> 
             <input
             name="task"
             className="p-2 w-5/6 h-10 font-bold text-gray-700 rounded-xl shadow-inner bg-slate-500/20 hover:bg-slate-500/30 focus:ring-sky-400"
