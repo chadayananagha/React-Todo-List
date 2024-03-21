@@ -1,9 +1,9 @@
 // import React from 'react'
 
-const ClearButton = () => {
+const ClearButton = ({clearAll}) => {
   return (
     <div>
-      
+      <button onClick={clearAll} >clear all</button>
     </div>
   )
 }

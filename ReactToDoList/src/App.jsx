@@ -16,11 +16,9 @@ function App() {
     return[];
   }
   const [todos, setTodos] = useState(getStoredTodos());
-  useEffect( () =>
-    {
-      localStorage.setItem("todos",JSON.stringify(todos),[todos]);
-    })
-    const createTodos = (todo) =>
+      localStorage.setItem("todos",JSON.stringify(todos));
+
+  const createTodos = (todo) =>
     {
       setTodos([...todos, {id:Math.random(),task:todo}]);
     }
@@ -28,15 +26,23 @@ function App() {
     {
       setTodos(todos.filter(todo => todo.id!== id));
     }
+
+  const clearAll = () => {
+    setTodos([]);
+  }
   return (
     <div className="body-style">
+      <header>
       <Header />
+    </header>
+    <main className="h-2/3 bg-red-500 ">
       {todos.map((todo,index) => (
       <ToDoList task={todo} key={index} deleteTodos={deleteTodos}/>
       ))
     }
+    </main>
     <AddTask getStoredTodos={getStoredTodos} createTodos={createTodos} />
-      <ClearButton />
+      <ClearButton clearAll={clearAll} />
     </div>
   )
 }
