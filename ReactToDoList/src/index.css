@@ -1,29 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer components{
+@layer components {
     .btn-style {
-        @apply p-2 px-5 m-8 rounded-xl border-t border-white shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500
+        @apply p-2 px-5 m-8 rounded-xl border-t border-white shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500;
     }
 
     .btn-style-2 {
-        @apply p-2 px-5 m-8 rounded-xl border-t border-white shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500
+        @apply p-2 px-5 rounded-xl border-t border-white shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500;
     }
 
     .container-item {
-        @apply flex static bottom-8 justify-between items-center p-4 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out hover:w-5/6 border-slate-100 bg-slate-50/50 backdrop-blur p-4 mb-4
+        @apply flex static bottom-8 justify-between items-center p-4 w-full rounded-2xl border-t shadow-2xl transition-all duration-300 ease-in-out border-slate-100 bg-slate-50/50 backdrop-blur mt-2 mb-2;
     }
 
     .container-input {
-        @apply flex fixed bottom-8 justify-between items-center p-4 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out hover:w-5/6 border-slate-100 bg-slate-50/50 backdrop-blur p-4
+        @apply flex fixed bottom-8 justify-between text-slate-800 items-center p-4 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out hover:w-5/6 border-slate-100 bg-slate-50/50 backdrop-blur p-4;
     }
 
     .input-style {
-        @apply p-2 w-5/6 h-10 font-bold text-gray-700 rounded-xl shadow-inner bg-slate-500/20 hover:bg-slate-500/30 focus:ring-sky-400       
-    }
-    
-    .body-style {
-        @apply w-full overflow-scroll h-screen flex flex-col justify-center items-center bg-[url('https://images.unsplash.com/photo-1580122468928-0e9940385cb1?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center
+        @apply p-2 w-5/6 h-10 font-bold text-slate-800 rounded-xl shadow-inner bg-slate-500/20 hover:bg-slate-500/30 focus:ring-sky-400;
     }
 
+    .body-style {
+        @apply w-full h-screen flex flex-col justify-center items-center bg-[url('https://images.unsplash.com/photo-1580122468928-0e9940385cb1?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center;
+    }
 }
