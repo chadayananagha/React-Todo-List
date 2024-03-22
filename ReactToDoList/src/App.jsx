@@ -23,6 +23,9 @@ function App() {
   };
   const deleteTodos = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+    if (todos.length == 1) {
+      mainRef.current.classList.add("opacity-0");
+    }
   };
 
   const clearAll = () => {
