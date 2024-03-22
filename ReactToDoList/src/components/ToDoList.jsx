@@ -7,7 +7,13 @@ const ToDoList = ({ task, deleteTodos }) => {
     setIsChecked(!isChecked);
   };
   return (
-    <div className="flex gap-4 container-item">
+    <div
+      className={
+        isChecked
+          ? "container-item gap-4 flex bg-slate-300/30 shadow-sm"
+          : "container-item gap-4 bg-slate-50/50"
+      }
+    >
       <input
         type="checkbox"
         onClick={HandleChecked}

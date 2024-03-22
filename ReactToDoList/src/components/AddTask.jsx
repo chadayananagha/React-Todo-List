@@ -18,7 +18,7 @@ const AddTask = ({ createTodos }) => {
         <form className="container-input" onSubmit={handleSubmit}>
           <input
             name="task"
-            className="input-style placeholder-slate-800"
+            className="input-style placeholder-slate-600"
             type="text"
             placeholder="Add a task"
             value={value}
