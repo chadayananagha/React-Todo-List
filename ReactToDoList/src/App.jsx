@@ -30,12 +30,13 @@ function App() {
     mainRef.current.classList.add("opacity-0");
   };
 
+
   return (
     <div className="body-style">
       <Header />
       <main
         ref={mainRef}
-        className="h-3/4 rounded-3xl flex justify-between items-center p-2 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out border-slate-100 bg-slate-300/50 backdrop-blur-sm opacity-0"
+        className="h-3/4 rounded-3xl flex justify-between items-center p-2 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out border-slate-100 bg-slate-300/50 backdrop-blur-sm"
       >
         <div className="h-full overflow-scroll w-full p-4 rounded-2xl flex justify-start flex-col items-center border-b shadow-inner transition-all duration-300 ease-in-out border-slate-100 bg-slate-500/30">
           {todos.map((todo, index) => (
