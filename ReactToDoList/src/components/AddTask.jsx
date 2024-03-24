@@ -5,16 +5,16 @@ const AddTask = ({ createTodos }) => {
   const [value, setValue] = useState("");
   function handleSubmit(event) {
     event.preventDefault();
-    createTodos(value);
     if (!value) {
       alert("Please add a task");
       return;
     }
     setValue("");
+    createTodos(value);
   }
   return (
     <>
-      <div className="flex flex-col justify-center items-center px-4 w-full h-full">
+      <div className="flex flex-wrap max-h-20 w-full justify-center mt-8 mb-8">
         <form className="container-input" onSubmit={handleSubmit}>
           <input
             name="task"
@@ -24,10 +24,7 @@ const AddTask = ({ createTodos }) => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <button
-            onClick=""
-            className="p-2 px-5 ml-4 rounded-xl border-t border-white shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-700 hover:bg-sky-500 text-sm font-semibold"
-          >
+          <button onClick="" className="btn-style">
             Add
           </button>
         </form>
