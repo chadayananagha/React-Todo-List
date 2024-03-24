@@ -1,7 +1,8 @@
 // import { useState,useEffect } from "react";
 import { useState } from "react";
+import App from "../App";
 // import React from 'react'
-const AddTask = ({ createTodos }) => {
+const AddTask = ({ formVisible, setFormVisible, createTodos }) => {
   const [value, setValue] = useState("");
   function handleSubmit(event) {
     event.preventDefault();
@@ -11,6 +12,10 @@ const AddTask = ({ createTodos }) => {
     }
     setValue("");
     createTodos(value);
+
+    if (formVisible == false) {
+      setFormVisible(true);
+    }
   }
   return (
     <>
