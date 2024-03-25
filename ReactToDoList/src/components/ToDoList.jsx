@@ -1,10 +1,33 @@
-import { useState } from "react";
+import { useState, } from "react";
 
 // import React from 'react'
 const ToDoList = ({ task, deleteTodos }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTask, setEditedTask] = useState(task.task);
   const [isChecked, setIsChecked] = useState(false);
+
   const HandleChecked = () => {
     setIsChecked(!isChecked);
+  };
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+  const handleSaveEdit = () => {
+    task.task = editedTask;
+    setIsEditing(false);
+    const tasks = JSON.parse(localStorage.getItem("todos")) || [];
+    const updatedTasks = tasks.map(t => {
+      if (t.id === task.id) {
+        return task;
+      }
+      return t;
+    });
+
+    localStorage.setItem("todos", JSON.stringify(updatedTasks));
+  };
+  const handleInputChange = (e) => {
+    setEditedTask(e.target.value);
   };
   return (
     <div
@@ -19,13 +42,30 @@ const ToDoList = ({ task, deleteTodos }) => {
         onClick={HandleChecked}
         className="p-2 mr-2 w-6 h-6 rounded-full shadow-inner transition-all duration-300 ease-in-out checked:shadow-xl peer bg-slate-400/20 text-sky-500 checked:bg-sky-500 hover:bg-sky-500/30 focus:ring-sky-500"
       />
-      <p
-        className="w-full font-bold text-slate-700"
-        style={{ textDecoration: isChecked ? "line-through" : "none" }}
-      >
-        {task.task}
-      </p>
-      <button className="btn-style-2">Edit</button>
+      {isEditing ? (
+        <input
+          type="text"
+          value={editedTask}
+          onChange={handleInputChange}
+          className="input-style placeholder-slate-600"
+        />
+      ) : (
+        <p
+          className="w-full font-bold text-slate-700"
+          style={{ textDecoration: isChecked ? "line-through" : "none" }}
+        >
+          {task.task}
+        </p>
+      )}
+      {isEditing ? (
+        <button className="btn-style-2" onClick={handleSaveEdit}>
+          Save
+        </button>
+      ) : (
+        <button className="btn-style-2" onClick={handleEdit}>
+          Edit
+        </button>
+      )}
       <button className="btn-style-2" onClick={() => deleteTodos(task.id)}>
         Delete
       </button>
