@@ -1,9 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer components{
-    .btn-style
-    {
-        @apply p-2 px-5 m-8 rounded-xl border-t border-white shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500
+@layer components {
+    .btn-style {
+        @apply p-2 ml-2 px-5 rounded-xl border-t border-t-white border-b-slate-500 hover:border-b-sky-600 border-b shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500 font-semibold;
+    }
+
+    .btn-style-2 {
+        @apply p-2 px-5 rounded-xl border-t border-t-white border-b-slate-400 hover:border-b-sky-600 border-b shadow-md transition-all duration-300 ease-out cursor-pointer hover:shadow-xl text-slate-700 bg-slate-100 hover:text-slate-900 hover:bg-sky-500;
+    }
+
+    .container-item {
+        @apply flex gap-4 flex-wrap sm:flex-nowrap static bottom-8 justify-between items-center p-4 w-full rounded-2xl border-t shadow-2xl transition-all duration-300 ease-in-out border-slate-100 bg-slate-50/50 backdrop-blur mt-2 mb-2;
+    }
+
+    .container-input {
+        @apply flex justify-center items-center px-4 w-full h-full border-b-slate-800 border-b justify-between text-slate-800 items-center p-4 w-4/5 rounded-3xl border-t shadow-2xl transition-all duration-300 ease-in-out hover:w-5/6 border-slate-100 bg-slate-50/50 backdrop-blur p-4;
+    }
+
+    .input-style {
+        @apply p-2 w-5/6 h-10 border-b-slate-200 border-t-slate-600 border-t border-b font-bold text-slate-800 rounded-xl shadow-inner bg-slate-500/20 hover:bg-slate-500/30 focus:ring-sky-400;
+    }
+
+    .body-style {
+        @apply w-full h-screen flex flex-col justify-between items-center lg:bg-[linear-gradient(to_right_bottom,rgba(215,225,255,0.7),rgba(10,10,52,0)),url("https://images.unsplash.com/photo-1485003975062-9946bdb9dbae?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")] bg-[linear-gradient(to_right_bottom,rgba(215,225,255,0.7),rgba(10,10,52,0)),url('https://images.unsplash.com/photo-1580122468928-0e9940385cb1?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
     }
 }
