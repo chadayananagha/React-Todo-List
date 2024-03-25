@@ -5,6 +5,7 @@ import ToDoList from "./components/ToDoList";
 import ClearButton from "./components/ClearButton";
 
 function App() {
+  let [formVisible, setFormVisible] = useState(false);
   function getStoredTodos() {
     let data = localStorage.getItem("todos");
     let json = JSON.parse(data);
@@ -15,9 +16,12 @@ function App() {
   }
   const [todos, setTodos] = useState(getStoredTodos());
   localStorage.setItem("todos", JSON.stringify(todos));
-
+  if (todos.length > 0 && formVisible == false) {
+    setFormVisible(true);
+  }
   const createTodos = (todo) => {
     setTodos([...todos, { id: Math.random(), task: todo }]);
+    setFormVisible(true);
   };
   const deleteTodos = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
@@ -30,8 +34,6 @@ function App() {
     setTodos([]);
     setFormVisible(false);
   };
-
-  let [formVisible, setFormVisible] = useState(false);
 
   return (
     <div className="body-style">
