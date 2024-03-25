@@ -31,7 +31,7 @@ function App() {
     setFormVisible(false);
   };
 
-  let [formVisible, setFormVisible] = useState(true);
+  let [formVisible, setFormVisible] = useState(false);
 
   return (
     <div className="body-style">
